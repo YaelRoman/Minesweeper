@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MINEFIELD v2.0</title>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=VT323:wght@400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-void:       #000000;
+      --bg-terminal:   #0a0f0a;
+      --green-dim:     #1a3a1a;
+      --green-mid:     #2d6e2d;
+      --green-bright:  #39ff14;
+      --green-glow:    #57ff4a;
+      --green-muted:   #4a7c4a;
+      --amber-warn:    #ffb300;
+      --red-mine:      #ff3333;
+      --white-flash:   #e8ffe8;
+      --scanline:      rgba(0, 0, 0, 0.15);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+      font-family: 'Share Tech Mono', monospace;
+    }
+
+    #game-wrapper {
+      position: relative;
+    }
+
+    #game-canvas {
+      display: block;
+      cursor: crosshair;
+      image-rendering: pixelated;
+    }
+
+    #crt-overlay {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: radial-gradient(
+        ellipse at center,
+        transparent 60%,
+        rgba(0,0,0,0.4) 100%
+      );
+    }
+
+    /* Off-screen aria-live region for accessibility */
+    #aria-announcer {
+      position: absolute;
+      left: -9999px;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body>
+  <div id="game-wrapper">
+    <canvas id="game-canvas" aria-label="Minesweeper game. Use mouse or touch to play."></canvas>
+    <div id="crt-overlay"></div>
+  </div>
+  <div id="aria-announcer" aria-live="assertive" aria-atomic="true"></div>
+
+  <script src="audio.js"></script>
+  <script src="renderer.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
