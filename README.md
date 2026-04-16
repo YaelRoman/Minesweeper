@@ -35,10 +35,8 @@ The visual design follows a **retro phosphor terminal** aesthetic: black backgro
 #### Boot Screen
 
 On launch, an animated terminal sequence types out system initialisation messages line by line before presenting the difficulty menu. A blinking cursor indicates the system is awaiting input.
-
-> **Screenshot — Boot sequence**
->
-> *(place screenshot here)*
+> **Boot Screen**
+![Boot sequence](images/BootScreen.gif)
 
 ---
 
@@ -54,9 +52,8 @@ The board is drawn as a grid of cells, each rendered according to its current st
 - **Mine cells** display a circular mine symbol with radiating spikes and a highlight, rendered in red.
 - **Hover state** brightens the cell under the cursor with a green glow border for clear targeting feedback.
 
-> **Screenshot — Active game board (Intermediate)**
->
-> *(place screenshot here)*
+> **Game board (Intermediate)**
+![Game board](images/GameBoard.gif)
 
 ---
 
@@ -70,10 +67,6 @@ A persistent status bar at the top of the canvas shows:
 - **Restart button** — a clickable `[ RESTART ]` button rendered entirely in canvas.
 - **Audio indicator** — shows whether sound is enabled or muted.
 
-> **Screenshot — HUD detail**
->
-> *(place screenshot here)*
-
 ---
 
 #### Animations
@@ -85,10 +78,6 @@ All animations are frame-rate independent, driven by `performance.now()` timesta
 - **Explosion wave** — upon hitting a mine, a cascading reveal spreads outward from the origin. Each mine activates with a delay proportional to its Manhattan distance from the clicked cell, producing a visible shockwave across the board. Each exploding mine flashes white before settling to red.
 - **Victory particles** — green squares emanate from the board with gravity, fading out over time.
 
-> **Screenshot — Explosion wave mid-sequence**
->
-> *(place screenshot here)*
-
 ---
 
 #### Game Over & Victory Screens
@@ -99,14 +88,8 @@ The **Game Over** screen features a chromatic aberration effect on the title tex
 
 The **Victory** screen displays final time and efficiency, with the title text pulsing in brightness.
 
-> **Screenshot — Game Over screen**
->
-> *(place screenshot here)*
-
 > **Screenshot — Victory screen**
->
-> *(place screenshot here)*
-
+![Victory Screen](/images/VictoryScreen.png)
 ---
 
 #### CRT Visual Effects
@@ -116,10 +99,6 @@ Three effects layer on top of all game content to reinforce the monitor aestheti
 - **Scanlines** — horizontal lines of reduced opacity run across the full canvas, evenly spaced, simulating the physical scan rows of a CRT tube.
 - **CRT border** — a glowing green rectangle frames the canvas edge, evoking the bezel of a phosphor monitor.
 - **Flicker** — every four to six seconds, the canvas opacity briefly drops for 50ms, simulating the natural instability of a cathode ray tube.
-
-> **Screenshot — Scanlines and CRT border visible**
->
-> *(place screenshot here)*
 
 ---
 
