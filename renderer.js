@@ -264,7 +264,7 @@ class Renderer {
       '> SELECT DIFFICULTY:',
       '>  [1] BEGINNER       (9x9,   10 mines)',
       '>  [2] INTERMEDIATE   (16x16, 40 mines)',
-      '>  [3] EXPERT         (50x50, 1000 mines)',
+      '>  [3] EXPERT         (50x20, 400 mines)',
     ];
     const addLine = (i) => {
       if (i >= lines.length) { this._bootDone = true; return; }

@@ -8,7 +8,7 @@ class MinesweeperGame {
   static DIFFICULTIES = {
     EASY:   { rows: 9,  cols: 9,  mines: 10,  label: 'BEGINNER' },
     MEDIUM: { rows: 16, cols: 16, mines: 40,  label: 'INTERMEDIATE' },
-    HARD:   { rows: 50, cols: 50, mines: 1000, label: 'EXPERT' },
+    HARD:   { rows: 20, cols: 50, mines: 400,  label: 'EXPERT' },
   };
 
   /** Game state machine values. */
